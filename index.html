@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abu Bakar | Credentials</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --page: #f4f7fb;
+        --surface: #ffffff;
+        --text: #142033;
+        --muted: #53657f;
+        --line: #dbe4f0;
+        --accent: #126b62;
+        --accent-hover: #0c554e;
+        --secondary: #203759;
+        --shadow: 0 24px 70px rgba(20, 32, 51, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        overflow-x: hidden;
+        padding:
+          max(32px, env(safe-area-inset-top))
+          max(18px, env(safe-area-inset-right))
+          max(32px, env(safe-area-inset-bottom))
+          max(18px, env(safe-area-inset-left));
+        background:
+          linear-gradient(135deg, rgba(18, 107, 98, 0.16), transparent 38%),
+          linear-gradient(315deg, rgba(238, 177, 54, 0.18), transparent 42%),
+          var(--page);
+        color: var(--text);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        letter-spacing: 0;
+      }
+
+      main {
+        width: min(100%, 760px);
+        display: grid;
+        grid-template-columns: minmax(190px, 260px) minmax(0, 1fr);
+        gap: 34px;
+        align-items: center;
+        padding: clamp(22px, 4vw, 44px);
+        border: 1px solid rgba(219, 228, 240, 0.92);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: var(--shadow);
+      }
+
+      .portrait {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(145deg, rgba(18, 107, 98, 0.18), rgba(32, 55, 89, 0.1)),
+          #e8eef7;
+        color: var(--secondary);
+        font-size: 86px;
+        font-weight: 800;
+      }
+
+      .portrait::before {
+        content: "AB";
+      }
+
+      .portrait img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 58px;
+        line-height: 1;
+        overflow-wrap: anywhere;
+      }
+
+      .tagline {
+        margin: 14px 0 24px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .email-label {
+        margin: 0 0 6px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .email {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        max-width: 100%;
+        margin-bottom: 26px;
+        color: var(--secondary);
+        font-size: 20px;
+        font-weight: 700;
+        overflow-wrap: anywhere;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .button {
+        min-height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 18px;
+        border: 1px solid var(--secondary);
+        border-radius: 8px;
+        color: var(--secondary);
+        background: var(--surface);
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.2;
+        text-align: center;
+        text-decoration: none;
+        transition:
+          background 160ms ease,
+          border-color 160ms ease,
+          color 160ms ease,
+          transform 160ms ease;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        color: #ffffff;
+        background: var(--secondary);
+        transform: translateY(-1px);
+      }
+
+      .button.primary {
+        border-color: var(--accent);
+        color: #ffffff;
+        background: var(--accent);
+      }
+
+      .button.primary:hover,
+      .button.primary:focus-visible {
+        border-color: var(--accent-hover);
+        background: var(--accent-hover);
+      }
+
+      @media (max-width: 620px) {
+        body {
+          place-items: start center;
+          padding:
+            max(18px, env(safe-area-inset-top))
+            max(14px, env(safe-area-inset-right))
+            max(18px, env(safe-area-inset-bottom))
+            max(14px, env(safe-area-inset-left));
+        }
+
+        main {
+          width: 100%;
+          grid-template-columns: 1fr;
+          gap: 22px;
+          padding: 20px;
+        }
+
+        .portrait {
+          width: min(100%, 224px);
+          justify-self: center;
+          font-size: 72px;
+        }
+
+        section {
+          min-width: 0;
+          text-align: center;
+        }
+
+        h1 {
+          font-size: 40px;
+          line-height: 1.05;
+        }
+
+        .tagline {
+          margin: 12px 0 20px;
+          font-size: 16px;
+        }
+
+        .email {
+          min-height: 0;
+          margin-bottom: 22px;
+          font-size: 16px;
+          justify-content: center;
+        }
+
+        .actions {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .button {
+          width: 100%;
+          min-height: 50px;
+          padding: 0 14px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        main {
+          padding: 18px;
+        }
+
+        h1 {
+          font-size: 34px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- Keep your photo file in this folder and point the image source to it. -->
+      <div class="portrait">
+        <img
+          src="Profile.png"
+          alt="Portrait of Abu Bakar"
+          onerror="this.remove()"
+        />
+      </div>
+
+      <section aria-label="Abu Bakar profile">
+        <h1>Abu Bakar</h1>
+        <p class="tagline">Full Stack AI Developer</p>
+
+        <!-- Replace the visible email and mailto address with your real email. -->
+        <p class="email-label">Email</p>
+        <a class="email" href="mailto:abubakarp789@gmail.com">abubakarp789@gmail.com</a>
+
+        <nav class="actions" aria-label="Abu Bakar links">
+          <!-- Replace these profile URLs with your own LinkedIn and GitHub links. -->
+          <a
+            class="button"
+            href="https://www.linkedin.com/in/abubakar56/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            class="button"
+            href="https://github.com/abubakarp789"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+          <a class="button" href="mailto:abubakarp789@gmail.com">Email</a>
+
+          <!-- Put abu-bakar-resume.pdf in this folder or change the filename below. -->
+          <a class="button primary" href="Abu_Bakar_CV.pdf" download>
+            Download Resume
+          </a>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>
